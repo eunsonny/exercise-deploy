@@ -13,6 +13,7 @@
     "@repo/ui": "workspace:*",
     "@tanstack/react-router": "^1.1.8",
     "autoprefixer": "^10.4.16",
+    "dayjs": "^1.11.10",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
