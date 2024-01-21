@@ -2,10 +2,12 @@
   "name": "exercise-deploy",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "pnpm install && turbo build",
     "build:static": "pnpm run build --filter static", 
     "dev": "turbo dev",
     "dev:static": "pnpm run dev --filter static",
+    "deploy": "pnpm install && turbo run deploy",
+    "deploy:static": "pnpm run deploy --filter static",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
