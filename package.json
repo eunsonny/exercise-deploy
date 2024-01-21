@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "build:static": "pnpm run build --filter static", 
     "dev": "turbo dev",
-    "dev:react": "turbo run dev --filter=react",
+    "dev:static": "pnpm run dev --filter static",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
