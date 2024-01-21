@@ -50,7 +50,7 @@ jobs:
 
       - name: Build
         run: pnpm build:static
-        
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -60,7 +60,7 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         run: |
-          aws s3 sync ./dist/ s3://exercise-deploy-static
+          aws s3 sync ./apps/static/dist/ s3://exercise-deploy-static
           aws s3 cp s3://exercise-deploy-static/index.html s3://exercise-deploy-static/index.html --metadata-directive REPLACE --cache-control no-cache --content-type text/html
 
       - name: Invalidate Cloudfront
