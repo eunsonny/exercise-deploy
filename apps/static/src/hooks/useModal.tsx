@@ -1,6 +1,4 @@
-// import { ModalDispatchContext, ModalItem } from "@/context/ModalProvider";
-// import { ModalDispatchContext } from "../context/ModalProvider";
-import { ModalDispatchContext } from "@/context/ModalProvider";
+import { ModalDispatchContext, ModalItem } from "@/context/ModalProvider";
 
 import { useContext } from "react";
 

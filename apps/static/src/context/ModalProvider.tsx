@@ -1,10 +1,8 @@
-
-
-// import BaseModal from "@/components/modals/BaseModal/BaseModal";
+import BaseModal from "@/components/modals/BaseModal/BaseModal";
 import { ReactNode, createContext, useMemo, useState } from "react";
 
 export type ModalItem = {
-  Component: unknown;
+  Component: any;
   props?: Record<string, unknown>;
 };
 
