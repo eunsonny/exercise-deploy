@@ -21,7 +21,7 @@ const TodoListItem = ({
           onClick={onChangeDoneStatus}
           className={`${
             isDone ? "bg-[#d3f8e8]" : "bg-[#D5D6DC]"
-          } w-[32px] h-[32px] rounded-full`}
+          } w-[32px] h-[32px] rounded-full cursor-pointer`}
         >
           <img
             className="relative left-1 bottom-[2px]"
