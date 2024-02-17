@@ -9,11 +9,13 @@ export type ModalItem = {
 interface ModalContextProps {
   modals: ModalItem[];
   isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
 }
 
 export const ModalContext = createContext<ModalContextProps>({
   modals: [],
   isOpen: false,
+  setIsOpen: () => {},
 });
 
 interface ModalDispatchContextProps {
@@ -47,7 +49,7 @@ const ModalProvider = ({ children }: { children: ReactNode }) => {
   const dispatch = useMemo(() => ({ open, close }), []);
 
   return (
-    <ModalContext.Provider value={{ modals: openedModals, isOpen }}>
+    <ModalContext.Provider value={{ modals: openedModals, isOpen, setIsOpen }}>
       <ModalDispatchContext.Provider value={dispatch}>
         <BaseModal />
         {children}
