@@ -11,22 +11,21 @@ function App() {
 
   const handleChangeDoneStatus = () => {};
 
-  const addTodoitem = () => {
-    if (!inputValue) return
+  const addTodoItem = (todoItem: string) => {
+    if (!todoItem) return
     
     const updatedTodoItems = [
       ...todoItems,
-      { task: inputValue, isDone: false },
+      { task: todoItem, isDone: false },
     ];
   
-    setInputValue('')
     setTodoItems(updatedTodoItems);
   };
 
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center">
-        <TodoList addTodoItem={addTodoitem}>
+        <TodoList addTodoItem={addTodoItem}>
           <TodoList.DateHeader />
           <input
             type="text"

@@ -7,14 +7,14 @@ import CreateToDoModal from "../modals/CreateToDoModal";
 
 interface TodoListBoxProps {
   children: ReactNode;
-  addTodoItem: VoidFunction;
+  addTodoItem: (todoItem: string) => void;
 }
 
 const TodoList = ({ children, addTodoItem }: TodoListBoxProps) => {
   const { openModal } = useModal();
 
   const handleClickAddButton = () => {
-    openModal(CreateToDoModal);
+    openModal(CreateToDoModal, { addTodoItem: addTodoItem });
   };
 
   return (
@@ -26,7 +26,7 @@ const TodoList = ({ children, addTodoItem }: TodoListBoxProps) => {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          // addTodoItem();
+
           handleClickAddButton();
         }}
         className="rounded-full bg-[#4FE3A4] w-[96px] h-[96px] relative bottom-[48px]"

@@ -1,10 +1,29 @@
 import * as Dialog from "@radix-ui/react-dialog";
+import { useState } from "react";
 
-const CreateToDoModal = ({ onClose }: any) => {
+interface CreateToDoModalProps {
+  onClose: VoidFunction;
+  addTodoItem: (todoItem: string) => void;
+}
+
+const CreateToDoModal = ({ onClose, addTodoItem }: CreateToDoModalProps) => {
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <Dialog.Content>
-      <input />
-      <button onClick={onClose}>버튼</button>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button
+        onClick={() => {
+          addTodoItem(inputValue);
+          onClose();
+        }}
+      >
+        추가
+      </button>
     </Dialog.Content>
   );
 };
