@@ -6,6 +6,7 @@
     "build:static": "pnpm run build --filter static", 
     "dev": "turbo dev",
     "dev:static": "pnpm run dev --filter static",
+    "dev:waku": "pnpm run dev --filter waku",
     "deploy": "pnpm install && turbo run deploy",
     "deploy:static": "pnpm run deploy --filter static",
     "lint": "turbo lint",
